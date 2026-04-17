@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { SearchFilterIcon } from "./SearchFilterIcon";
+import { SearchFilterIcon } from "../icons/SearchFilterIcon";
 
 type SearchableInputProps<T> = {
   items: T[];

@@ -16,15 +16,15 @@ export default function CollapsibleCard({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="w-full bg-[#B3B3B3]">
+    <div className="w-full">
       {/* Header */}
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className="
-          w-full flex items-center justify-between
+          w-full flex items-center justify-between bg-[#B3B3B3]
           px-4 py-[3px]
-          text-left font-medium text-gray-800 border-2 rounded-[2px] border-[#383838]
+          text-left font-semibold text-gray-800 border-2 rounded-[2px] border-[#383838]
         "
       >
         <span>{title}</span>
@@ -36,7 +36,7 @@ export default function CollapsibleCard({
       </button>
 
       {/* Body */}
-      {open && <div className="px-1 pt-4 bg-white">{children}</div>}
+      {open && <div className="pt-4 bg-white">{children}</div>}
     </div>
   );
 }

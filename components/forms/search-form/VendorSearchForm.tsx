@@ -3,8 +3,8 @@
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
-import OrSeperator from "../ui/OrSeperator";
-import { SearchableInput } from "../ui/SearchableInput";
+import OrSeperator from "../../ui/OrSeperator";
+import { SearchableInput } from "../../ui/searchable-dropdown/SearchableInput";
 import { useAppDispatch } from "@/store/hooks";
 import { setShowSearchList } from "@/store/slices/searchSlice";
 

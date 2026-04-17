@@ -5,7 +5,7 @@ export default function Select({ children, ...props }: SelectProps) {
     <div className="relative">
       <select
         {...props}
-        className="w-full border-3 border-gray-800 rounded px-3 py-3 text-[16px]
+        className="w-full border-2 border-[#383838] rounded-[2px] pl-3 pr-5 py-3 text-[16px]
       focus:outline-none bg-white text-gray-800 appearance-none font-semibold"
       >
         {children}

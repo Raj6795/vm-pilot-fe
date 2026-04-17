@@ -13,7 +13,7 @@ export default function vendorOnboardingLayout({
     (state) => state.search.showSearchList,
   );
   return (
-    <div className="min-h-screen flex flex-1 flex-col items-center justify-start bg-white p-6 pt-3">
+    <div className="min-h-screen w-full flex flex-1 flex-col items-center justify-start bg-white p-6 pt-3">
       <div className="w-full flex justify-left flex-col mb-4">
         <h1 className="text-black text-[28px] font-semibold mb-4">
           Supplier Management

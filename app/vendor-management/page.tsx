@@ -1,6 +1,6 @@
 "use client";
 
-import VendorSearchForm from "@/components/forms/VendorSearchForm";
+import VendorSearchForm from "@/components/forms/search-form/VendorSearchForm";
 
 export default function VendorManagement() {
   return (
