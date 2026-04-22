@@ -36,7 +36,7 @@ export default function CollapsibleCard({
       </button>
 
       {/* Body */}
-      {open && <div className="pt-4 bg-white">{children}</div>}
+      {open && <div className="pt-4">{children}</div>}
     </div>
   );
 }

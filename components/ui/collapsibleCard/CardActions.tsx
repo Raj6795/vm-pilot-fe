@@ -1,38 +1,56 @@
 "use client";
 
-import { useState } from "react";
 import FilterDropdown from "../filter-dropdown/FilterDropdown";
 
-type CardActionsProps = {
-  sortable: boolean;
-  action: React.ReactNode;
+type BaseProps = {
+  heading?: string;
+  action?: React.ReactNode;
 };
 
-export default function CardActions({ sortable, action }: CardActionsProps) {
-  const [filter, setFilter] = useState<"primary" | "secondary" | "optional">(
-    "primary",
-  );
+type SortableProps = {
+  sortable: true;
+  filter: string;
+  setFilter: (value: string) => void;
+  counts: Record<string, number>;
+  total: number;
+};
 
-  const counts = {
-    primary: 3,
-    secondary: 4,
-    optional: 3,
-  };
+type NonSortableProps = {
+  sortable?: false;
+  filter?: never;
+  setFilter?: never;
+  counts?: never;
+  total?: never;
+};
 
+type CardActionsProps = BaseProps & (SortableProps | NonSortableProps);
+
+export default function CardActions({
+  sortable,
+  action,
+  heading,
+  filter,
+  setFilter,
+  counts,
+  total,
+}: CardActionsProps) {
   return (
     <div className="w-full flex items-center justify-between mb-4">
+      {heading && (
+        <h3 className="text-[24px] font-semibold text-[#1E1E1E]">{heading}</h3>
+      )}
       {sortable && (
         <div className="flex text-[#1E1E1E] font-semibold items-center gap-2 pl-4">
           <p>Sort by: </p>
           <FilterDropdown
             value={filter}
             counts={counts}
-            total={10}
+            total={total}
             onChange={setFilter}
           />
         </div>
       )}
-      <div>{action}</div>
+      {action && <div>{action}</div>}
     </div>
   );
 }

@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 
-type FilterType = "primary" | "secondary" | "optional";
-
 type FilterDropdownProps = {
-  value: FilterType;
-  counts: Record<FilterType, number>;
+  value: string;
+  counts: Record<string, number>;
   total: number;
-  onChange: (value: FilterType) => void;
+  onChange: (value: string) => void;
 };
 
 export default function FilterDropdown({
@@ -49,15 +47,14 @@ export default function FilterDropdown({
             z-10
           "
         >
-          {(["primary", "secondary", "optional"] as FilterType[]).map(
-            (option) => (
-              <button
-                key={option}
-                onClick={() => {
-                  onChange(option);
-                  setOpen(false);
-                }}
-                className={`
+          {(["primary", "secondary", "optional"] as string[]).map((option) => (
+            <button
+              key={option}
+              onClick={() => {
+                onChange(option);
+                setOpen(false);
+              }}
+              className={`
                   w-full text-left px-3 py-2
                   hover:bg-gray-100
                   ${
@@ -66,11 +63,10 @@ export default function FilterDropdown({
                       : "font-normal"
                   }
                 `}
-              >
-                {capitalize(option)}
-              </button>
-            ),
-          )}
+            >
+              {capitalize(option)}
+            </button>
+          ))}
         </div>
       )}
     </div>

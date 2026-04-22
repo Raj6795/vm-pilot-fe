@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import TickButton from "@/components/ui/button/TickButton";
 import TrashButton from "@/components/ui/button/TrashButton";
@@ -5,13 +7,27 @@ import CardActions from "@/components/ui/collapsibleCard/CardActions";
 import CollapsibleCard from "@/components/ui/collapsibleCard/CollapsibleCard";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
+import { useState } from "react";
+
+const counts = {
+  primary: 5,
+  secondary: 3,
+  optional: 2,
+};
+
+const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
 
 export default function SupplierAddressesCard() {
+  const [filter, setFilter] = useState("");
   return (
     <CollapsibleCard title="Supplier Addresses">
       <CardActions
         sortable={true}
         action={<Button variant="form">+ Add Another Contact</Button>}
+        filter={filter}
+        setFilter={setFilter}
+        counts={counts}
+        total={total}
       />
       <div className="w-full border-2 border-[#1E1E1E] rounded-[6px] p-5">
         <div className="flex justify-between items-center">
