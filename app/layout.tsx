@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/layout/Header";
 
-import { Provider } from "react-redux";
-import { store } from "@/store";
-import ReduxProvider from "@/store/ReduxProvider";
+import { StoreProvider } from "@/store/StoreProvider";
+
+import AppHeader from "@/components/layout/AppHeader";
+import AppSideNav from "@/components/layout/AppSideNav";
 
 export const metadata: Metadata = {
   title: "VM Modernization Pilot",
@@ -19,12 +19,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-full flex flex-col bg-white">
-        <ReduxProvider>
-          <Header />
-          <main className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
-            {children}
-          </main>
-        </ReduxProvider>
+        <StoreProvider>
+          <div className="app-shell">
+            <AppHeader />
+            <div className="app-body">
+              <AppSideNav />
+              <main className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-300">
+                {children}
+              </main>
+            </div>
+          </div>
+        </StoreProvider>
       </body>
     </html>
   );

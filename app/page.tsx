@@ -8,13 +8,13 @@ export default function Home() {
 
   useEffect(() => {
     // Redirect to the vendor management page on initial load
-    router.push("/vendor-management");
+    router.push("/vendors/search");
   }, []);
 
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow w-full max-w-sm">
       <a
-        href="/vendor-management"
+        href="/vendors/search"
         className="font-bold text-white text-lg hover:underline"
       >
         Redirect to vendor-management

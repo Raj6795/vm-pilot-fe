@@ -25,3 +25,53 @@ body {
   color: var(--foreground); */
   font-family: roboto, sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+}
+
+.side-nav {
+  width: 220px;
+  transition: width 0.2s ease;
+  border-right: 1px solid #e5e5e5;
+}
+
+.side-nav.closed {
+  width: 0;
+  overflow: hidden;
+}
+
+.app-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 56px;
+  right: 16px;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 8px;
+}
