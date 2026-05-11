@@ -5,6 +5,7 @@ import { StoreProvider } from "@/store/StoreProvider";
 
 import AppHeader from "@/components/layout/AppHeader";
 import AppSideNav from "@/components/layout/AppSideNav";
+import AppActionBar from "@/components/layout/AppActionBar";
 
 export const metadata: Metadata = {
   title: "VM Modernization Pilot",
@@ -22,6 +23,7 @@ export default function RootLayout({
         <StoreProvider>
           <div className="app-shell">
             <AppHeader />
+            <AppActionBar />
             <div className="app-body">
               <AppSideNav />
               <main className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-300">

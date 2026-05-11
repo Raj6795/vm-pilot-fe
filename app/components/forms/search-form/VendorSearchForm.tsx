@@ -22,13 +22,13 @@ export default function VendorSearchForm() {
       {/* Grid Layout */}
       <div className="grid grid-cols-12 gap-4 mb-6">
         <div className="col-span-2">
-          <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-            Company
+          <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+            COMPANY
           </label>
           <Select
           // {...register("company")}
           >
-            <option value="">Select Company</option>
+            <option value="">Select</option>
             <option value="company1">Company 1</option>
             <option value="company2">Company 2</option>
           </Select>
@@ -36,8 +36,8 @@ export default function VendorSearchForm() {
 
         <div className="col-span-10 grid grid-cols-[47.5%_5%_47.5%] gap-0">
           <div>
-            <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-              Supplier Name
+            <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+              SUPPLIER NAME
             </label>
             <Input
               placeholder="Enter Supplier Name"
@@ -50,8 +50,8 @@ export default function VendorSearchForm() {
           </div>
 
           <div>
-            <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-              Supplier Number
+            <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+              SUPPLIER NUMBER
             </label>
             <Input
               placeholder="Enter Supplier Number"
@@ -63,21 +63,8 @@ export default function VendorSearchForm() {
 
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-2">
-          <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-            Suffix #
-          </label>
-          <Select
-          //   {...register("code1")}
-          >
-            <option value="">Select Suffix</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-          </Select>
-        </div>
-
-        <div className="col-span-2">
-          <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-            Dept #
+          <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+            DEPT #
           </label>
           <Select
           //   {...register("code2")}
@@ -88,14 +75,27 @@ export default function VendorSearchForm() {
           </Select>
         </div>
 
+        <div className="col-span-2">
+          <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+            SUFFIX #
+          </label>
+          <Select
+          //   {...register("code1")}
+          >
+            <option value="">Select Suffix</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+          </Select>
+        </div>
+
         <div className="col-span-8 grid grid-cols-[47.5%_5%_47.5%] gap-0">
           <div>
-            <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-              Location Group
+            <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+              LOCATION NUMBER
             </label>
             <SearchableInput
               items={[1, 2, 3]}
-              getLabel={(item) => `Location group ${item}`}
+              getLabel={(item) => `Location number ${item}`}
               onChange={(item) => console.log(item)}
             />
           </div>
@@ -105,12 +105,12 @@ export default function VendorSearchForm() {
           </div>
 
           <div>
-            <label className="block text-[16px] text-gray-700 mb-1 font-semibold">
-              Location Number
+            <label className="block text-[12px] text-[#64686C] mb-1 font-semibold">
+              LOCATION GROUP NAME/NUMBER
             </label>
             <SearchableInput
               items={[1, 2, 3]}
-              getLabel={(item) => `Location number ${item}`}
+              getLabel={(item) => `Location group ${item}`}
               onChange={(item) => console.log(item)}
             />
           </div>

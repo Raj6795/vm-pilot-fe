@@ -14,11 +14,11 @@ export default function Select({ children, ...props }: SelectProps) {
       <span
         className="
           pointer-events-none absolute right-3 top-1/2
-          -translate-y-[55%] rotate-180
+          -translate-y-[55%]
           text-gray-800 text-[16px] font-semibold
         "
       >
-        ^
+        <img src="/svg/dropdown_icon.svg" alt="dropdown icon" />
       </span>
     </div>
   );
